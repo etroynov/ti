@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro dist",
+    "start-dev-api": "micro-dev dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "micro": "^9.3.2",
+    "micro-compose": "0.0.3",
+    "micro-cors": "^0.1.0",
+    "micro-jwt-auth": "^1.10.0",
+    "micro-upload": "^1.0.1",
+    "microrouter": "^3.1.3"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
+}
