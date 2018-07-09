@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest test",
     "start": "micro dist",
     "start-dev-api": "micro-dev dist"
   },
@@ -19,7 +20,9 @@
     "microrouter": "^3.1.3"
   },
   "devDependencies": {
+    "jest": "^23.3.0",
     "micro-dev": "^3.0.0",
+    "ts-jest": "^23.0.0",
     "typescript": "^2.9.2"
   }
 }
