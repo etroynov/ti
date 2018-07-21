@@ -17,7 +17,8 @@ import {
   NavBar,
   Main,
   Body,
-  Commercial
+  CardList,
+  CardListCommercial
 } from './styledComponents/styledMainScreen'
 
 import {
@@ -80,7 +81,7 @@ export default class App extends React.Component {
             {category.map(el => <MenuList>{el}</MenuList>)}
           </Main>
           <Body>
-            <div className="card_list">
+            <CardList>
               <Card>
               </Card>
               <Card>
@@ -107,27 +108,28 @@ export default class App extends React.Component {
                 <CardHeader></CardHeader>
                 <CardFooter></CardFooter>
               </Card>
-            </div>
+            </CardList>
+            <CardListCommercial>
+              <Card>
+                <CardBody></CardBody>
+              </Card>
+              <Card>
+                <CardBody></CardBody>
+              </Card>
+              <Card>
+                <CardBody></CardBody>
+              </Card>
+              <Card>
+                <CardBody></CardBody>
+              </Card>
+              <Card>
+                <CardBody></CardBody>
+              </Card>
+            </CardListCommercial>
           </Body>
-          <Commercial>
-            <div className="card-lsit" style={{ margin: 20 }}>
-              <Card>
-                <CardBody></CardBody>
-              </Card>
-              <Card>
-                <CardBody></CardBody>
-              </Card>
-              <Card>
-                <CardBody></CardBody>
-              </Card>
-              <Card>
-                <CardBody></CardBody>
-              </Card>
-              <Card>
-                <CardBody></CardBody>
-              </Card>
-            </div>
-          </Commercial>
+          {/* <Commercial>
+            < */}
+          {/* </Commercial> */}
           <Footer>
           </Footer>
         </Container>

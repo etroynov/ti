@@ -7,7 +7,7 @@ export const Container = styled.div`
 	grid-template-areas: 
 		". nav-bar nav-bar nav-bar nav-bar ."
 		". main main main main ."
-		". body body body commercial ."
+		". body body body body ."
 		". footer footer footer footer ."
 
 `;
@@ -33,6 +33,9 @@ export const Body = styled.div`
 	grid-area: body;
 	border-bottom: 1px solid #e5e5e5;
 	background-color: white
+	grid-template-columns: repeat(4, 1fr);
+  	grid-template-rows: max-content;
+}
 `
 
 export const Commercial = styled.div`
@@ -40,4 +43,14 @@ export const Commercial = styled.div`
 	border-bottom: 1px solid #e5e5e5;
 	background-color: white;
 	border-left: 1px solid #e5e5e5
+`
+
+export const CardList = styled.div`
+	grid-column-start: 1;
+	grid-column-end: 5;
+`
+
+export const CardListCommercial = styled.div`
+	grid-column-start: 5;
+	grid-column-end: 6;
 `
