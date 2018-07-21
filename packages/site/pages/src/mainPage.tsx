@@ -18,17 +18,17 @@ import {
   Main,
   Body,
   Commercial
-} from './components/styledComponents/styledMainScreen'
+} from './styledComponents/styledMainScreen'
 
 import {
   CardHeader,
   CardBody,
   CardFooter
-} from './components/styledComponents/styledCard'
+} from './styledComponents/styledCard'
 
 import {
   MenuList
-} from './components/styledComponents/styledMenuList'
+} from './styledComponents/styledMenuList'
 /*
  * Manually data
  */
