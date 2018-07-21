@@ -1,6 +1,14 @@
-import styled from "styled-components";
+import styled, { StyledFunction } from "styled-components"
 
-const Button = styled.button`
+/*
+ * TS Interfaces
+ */
+import { IButtonProps } from "../intefraces";
+
+const button: StyledFunction<IButtonProps & React.HTMLProps<HTMLInputElement>> = styled.button
+
+
+const Button = button`
   background-color: ${props => {
     if (props.primary) {
       return '#1e87f0'

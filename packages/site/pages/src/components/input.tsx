@@ -7,9 +7,13 @@ import * as React from 'react';
  */
 import { Input } from './styledComponents/styledInput'
 /*
+ * TS Interfaces
+ */
+import { ISearchProps, ISearchState } from "../interfaces/intefraces";
+/*
  * Expo
  */
-export default class Search extends React.Component {
+export default class Search extends React.Component<ISearchProps, ISearchState> {
 	state = { searchCriteria: null }
 
 	handleChange = (e) => this.props.handleShowList(e.target.value)
