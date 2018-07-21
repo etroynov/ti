@@ -1,8 +1,9 @@
 **node_modules
 **dist
 **.next
-src/js/**
 **.cache
 **yarn-error.log
 **yarn.lock
 **package-lock.json
+src/js/**
+lerna-debug.log
