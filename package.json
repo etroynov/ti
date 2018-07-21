@@ -4,9 +4,12 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.0.0-beta.21"
+    "lerna": "^2.10.2"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "styled-components": "^3.3.3"
+  }
 }

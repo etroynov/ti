@@ -1,0 +1,27 @@
+0 silly input []
+1 silly flags { _: [ 'bootstrap' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   args: [] }
+2 verbose rootPath /home/igor/proj/ti
+3 info version 2.10.2
+4 silly existsSync /home/igor/proj/ti/VERSION
+5 silly initialize attempt
+6 silly npmConfig { registry: undefined,
+6 silly npmConfig   npmClient: 'yarn',
+6 silly npmConfig   npmClientArgs: undefined,
+6 silly npmConfig   mutex: 'network:42424' }
+7 silly initialize success
+8 silly execute attempt
+9 info Bootstrapping 3 packages
+10 silly installInDirOriginalPackageJson /home/igor/proj/ti
+11 silly getExecOpts { cwd: '/home/igor/proj/ti' }
+12 silly installInDir [ 'yarn',
+12 silly installInDir   [ 'install', '--mutex', 'network:42424', '--non-interactive' ] ]
+13 error execute callback with error
+14 error Error: spawn yarn ENOENT
+14 error     at Process.ChildProcess._handle.onexit (internal/child_process.js:229:19)
+14 error     at onErrorNT (internal/child_process.js:406:16)
+14 error     at process._tickCallback (internal/process/next_tick.js:63:19)
+14 error     at Function.Module.runMain (internal/modules/cjs/loader.js:746:11)
+14 error     at startup (internal/bootstrap/node.js:240:19)
