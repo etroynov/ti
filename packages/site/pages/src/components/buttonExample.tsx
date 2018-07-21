@@ -5,7 +5,7 @@ import * as React from 'react';
 /*
  * Styled Components
  */
-import { Button } from './styledComponents/button'
+import Button from './button'
 /*
  * Expo
  */
