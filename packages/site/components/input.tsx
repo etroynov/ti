@@ -8,7 +8,7 @@ import * as React from 'react';
  * Styled Components
  */
 
-import { Input } from 'styledComponents/styledInput';
+import { Input } from '../styledComponents/styledInput';
 
 /*!
  * Expo

@@ -8,9 +8,9 @@ import * as React from 'react';
  * Styled Components
  */
 
-import { List, ListItem } from 'styledComponents/styledList';
+import { List, ListItem } from '../styledComponents/styledList';
 
-/*
+/*!
  * Expo
  */
 

@@ -1,22 +1,28 @@
-import styled from "styled-components";
+/*!
+ * Dependencies
+ */
 
-const List = styled.ul`
-	margin: 0;
-	padding: 20px;
-	line-height: 2;
-	border-bottom: 1px solid black;   
-	background-color: white;
-	position: relative;
-	list-style-type: none
+import styled from 'styled-components';
+
+/*!
+ * Expo
+ */
+
+export const List = styled.ul`
+  margin: 0;
+  padding: 20px;
+  line-height: 2;
+  border-bottom: 1px solid black;
+  background-color: white;
+  position: relative;
+  list-style-type: none;
 `;
 
-const ListItem = styled.li`
-	padding-left: 10px;
-	padding-right: 10px
-	&:hover {
-		background-color: gainsboro;
-		cursor: pointer;
-	}
+export const ListItem = styled.li`
+  padding-left: 10px;
+  padding-right: 10px;
+  &:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
 `;
-
-export { List, ListItem }
