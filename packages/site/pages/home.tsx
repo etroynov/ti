@@ -9,10 +9,10 @@ import { ThemeProvider } from 'styled-components';
  * Components
  */
 
-import List from '../components/List';
-import Card from '../components/Card';
-import Search from '../components/input';
-import Button from '../components/Button';
+import List from 'components/List';
+import Card from 'components/Card';
+// import Search from '../components/input';
+import Button from 'components/Button';
 
 /*
  * Styled Components
@@ -25,15 +25,15 @@ import {
   Main,
   Body,
   Commercial,
-} from '../styledComponents/styledMainScreen';
+} from 'styledComponents/styledMainScreen';
 
-import { MenuList } from '../styledComponents/styledMenuList';
+import { MenuList } from 'styledComponents/styledMenuList';
 
 /*!
  * Theme
  */
 
-import basic from './../theme/basic';
+import basic from 'theme/basic';
 
 /*!
  * Initial state
@@ -87,7 +87,7 @@ class Home extends React.Component {
         <div style={{ backgroundColor: '#f0eeeb' }}>
           <Container>
             <NavBar>
-              <Search placeholder={'Введите текст'} handleShowList={this.handleShowList} />
+              {/* <Search placeholder={'Введите текст'} handleShowList={this.handleShowList} /> */}
             </NavBar>
             <Main>
               <Button>Test</Button>

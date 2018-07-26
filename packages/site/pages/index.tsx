@@ -9,25 +9,24 @@ import { ThemeProvider } from 'styled-components';
  * Components
  */
 
-/*
- * Styled Components
- */
+import { Layout, Header, Footer } from '../components/Common';
 
 /*!
  * Theme
  */
 
-import basicTheme from './../theme/basic';
+import theme from '../theme/basic';
 
 /*
  * Expo
  */
 
 const Home = () => (
-  <ThemeProvider theme={basicTheme}>
-    <div>
-      <img src="/img/logo.svg" alt=""/>
-    </div>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <Header />
+      <Footer />
+    </Layout>
   </ThemeProvider>
 );
 
