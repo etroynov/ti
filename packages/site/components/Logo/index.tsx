@@ -17,6 +17,8 @@ import Year from './Year';
 
 const Wrapper = styled.div`
   width: 450px;
+  margin: 0 auto;
+  padding: 20px 0;
 `;
 
 /*!

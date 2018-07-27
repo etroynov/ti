@@ -10,6 +10,7 @@ import { injectGlobal } from 'styled-components';
  */
 
 import Logo from '../Logo';
+import MainNav from '../MainNav';
 
 /*!
  * Global style
@@ -29,12 +30,40 @@ injectGlobal`
 `;
 
 /*!
+ * initialState
+ */
+
+const items = [
+  {
+    name: 'Команды',
+    slug: 'teams',
+  },
+  {
+    name: 'Турниры',
+    slug: 'tournaments',
+  },
+  {
+    name: 'Матчи',
+    slug: 'matches',
+  },
+  {
+    name: 'Турнирная сетка',
+    slug: 'tournament_bracket',
+  },
+  {
+    name: 'Прямой эфир',
+    slug: 'live',
+  },
+];
+
+/*!
  * Expo
  */
 
 const Header = () => (
   <header>
     <Logo url="/static/img/logo.svg" year="2018" />
+    <MainNav items={items} />
   </header>
 );
 
