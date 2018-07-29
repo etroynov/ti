@@ -57,7 +57,7 @@ export default class App extends React.Component {
         <Right>
           <TeamComponent {...Player} />
           <Progress>
-            <ProgressBar {...Player} size={280}/>
+            <ProgressBar {...Player} size={280} />
           </Progress>
         </Right>
         <PlayerInfo>
