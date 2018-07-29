@@ -20,7 +20,11 @@ import {
   Content,
 } from './style';
 
-export default class App extends React.Component {
+/*!
+ * Expo
+ */
+
+export default class App extends React.Component<any, any> {
   render() {
     const { date, firstTeam, firstTeamAvatar, score, secondTeam, secondTeamAvatar, meetName, meetStage } = this.props;
     return (
@@ -45,6 +49,6 @@ export default class App extends React.Component {
           <span>{meetName}</span> | <span>{meetStage}</span>
         </Meeting>
       </Content>
-    )
+    );
   }
 }

@@ -9,10 +9,13 @@ import * as React from 'react';
  */
 
 import { Matches } from '../ManualData';
-/**
+
+/*!
  * Components
  */
+
 import MatchHistContent from '../MatchHistContent';
+
 /*!
  * Styled Component
  */
@@ -36,7 +39,7 @@ export default class App extends React.Component {
   renderListItem = (matches) => {
     return matches.map(item =>
       (
-        <MatchHistContent {...item}/>
+        <MatchHistContent {...item} />
       ),
     );
   }
