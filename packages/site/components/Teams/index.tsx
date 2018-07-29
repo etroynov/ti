@@ -1,14 +1,19 @@
 /*!
  * dependencies
  */
+
 import * as React from 'react';
-/**
+
+/*!
  * ManualData
  */
+
 import { Teams } from '../ManualData';
-/**
+
+/*!
  * Styled Component
  */
+
 import {
   Container,
   TitleBorder,
@@ -19,20 +24,23 @@ import {
   LeftColumn,
   RightColumn,
 } from './style';
-/**
+
+/*!
  * COmponents
  */
+
 import TeamContent from '../TeamsContent';
+
 /*!
- * Expo
- */
+* Expo
+*/
 
 export default class App extends React.Component {
 
   renderListItem = (teams) => {
     return teams.map(item =>
       (
-        <TeamContent {...item}/>
+        <TeamContent {...item} />
       ),
     );
   }

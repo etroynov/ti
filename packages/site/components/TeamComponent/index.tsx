@@ -3,9 +3,10 @@
  */
 import * as React from 'react';
 
-/**
+/*!
  * Styled Component
  */
+
 import {
   TeamAvatar,
   TeamTitle,
@@ -13,6 +14,10 @@ import {
   TeamContainer,
   TemaInfo,
 } from './style';
+
+/**
+ * Expo
+ */
 
 export default class App extends React.Component<ITeamComponentProps, ITeamComponentState> {
   render() {
@@ -25,6 +30,6 @@ export default class App extends React.Component<ITeamComponentProps, ITeamCompo
           <TeamName>{teamName}</TeamName>
         </TemaInfo>
       </TeamContainer>
-    )
+    );
   }
 }

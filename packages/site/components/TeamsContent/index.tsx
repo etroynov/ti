@@ -25,12 +25,12 @@ export default class App extends React.Component {
     return (
       <Content>
         <Team>
-          <TeamComponent {...this.props}/>
+          <TeamComponent {...this.props} />
         </Team>
         <Progress>
           <ProgressBar {...this.props} />
         </Progress>
       </Content>
-    )
+    );
   }
 }

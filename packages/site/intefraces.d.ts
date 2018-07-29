@@ -14,14 +14,14 @@ interface IButtonProps {
   children?: any
 }
 
-interface IButtonState {}
+interface IButtonState { }
 
 interface IListProps {
   data?: string[]
   handleShowList?: (params: (null)) => void
 }
 
-interface IListState {}
+interface IListState { }
 
 interface IProgressBarProps {
   size?: number,
@@ -34,4 +34,11 @@ interface IProgressBarProps {
   percents?: string
 }
 
-interface IProgressBarState {}
+interface IProgressBarState { }
+
+interface ITeamComponentProps {
+  teamName?: string,
+  teamAvatar?: string,
+}
+
+interface ITeamComponentState { }

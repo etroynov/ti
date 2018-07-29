@@ -6,16 +6,18 @@ import styled, { StyledFunction } from 'styled-components';
 
 const div: StyledFunction<IProgressBarProps & React.HTMLProps<HTMLInputElement>> = styled.div;
 const p: StyledFunction<IProgressBarProps & React.HTMLProps<HTMLInputElement>> = styled.p;
+
 /*!
  * Expo
  */
 
 export const ProgressBar = div`
+  height: 7px;
+
   width: ${(props) => {
     if (props.size) return props.size + 'px';
     return '350px';
   }};
-  height: 7px
 `;
 
 export const Part = div`
@@ -50,7 +52,6 @@ export const Part = div`
     if (props.last) return '10px';
     return 0;
   }};
-
 `;
 
 export const Footer = div`
@@ -61,6 +62,7 @@ export const Footer = div`
     return '350px';
   }};
 `;
+
 export const Header = div`
   margin-right: 20px;
   height: 7px;
@@ -71,9 +73,11 @@ export const Header = div`
     return '350px';
   }};
 `;
+
 export const Title = styled.span`
   font-size: 0.85em;
 `;
+
 export const Item = p`
   display: inline-block;
   font-size: 0.85em;
