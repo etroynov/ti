@@ -22,3 +22,16 @@ interface IListProps {
 }
 
 interface IListState {}
+
+interface IProgressBarProps {
+  size?: number,
+  wins?: number,
+  draw?: number,
+  lose?: number,
+  totalGame?: number,
+  first?: boolean,
+  last?: boolean,
+  percents?: string
+}
+
+interface IProgressBarState {}
