@@ -1,6 +1,7 @@
 /*!
- * dependencies
+ * Dependencies
  */
+
 import * as React from 'react';
 
 /*!
@@ -20,17 +21,17 @@ import {
   Progress,
 } from './style';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Content>
-        <Team>
-          <TeamComponent {...this.props} />
-        </Team>
-        <Progress>
-          <ProgressBar {...this.props} />
-        </Progress>
-      </Content>
-    );
-  }
-}
+/*!
+ * Expo
+ */
+
+export default props => (
+  <Content>
+    <Team>
+      <TeamComponent {...props} />
+    </Team>
+    <Progress>
+      <ProgressBar {...props} />
+    </Progress>
+  </Content>
+);

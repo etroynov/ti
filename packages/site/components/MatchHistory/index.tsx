@@ -1,8 +1,8 @@
 /*!
- * dependencies
+ * Dependencies
  */
 
-import * as React from 'react';
+import React from 'react';
 
 /*!
  * ManualData
@@ -32,32 +32,27 @@ import {
 } from './style';
 
 /*!
+ * Helpers
+ */
+
+const renderListItem = matches => matches.map(item => <MatchHistContent {...item} />);
+
+/*!
  * Expo
  */
 
-export default class App extends React.Component {
-  renderListItem = (matches) => {
-    return matches.map(item =>
-      (
-        <MatchHistContent {...item} />
-      ),
-    );
-  }
-  render() {
-    return (
-      <Container>
-        <TitleBorder>
-          <Title>История матчей</Title>
-        </TitleBorder>
-        <Table>
-          <Header>
-            <LeftColumn>Дата</LeftColumn>
-            <CenterColumn>Матч</CenterColumn>
-            <RightColumn>Турнир</RightColumn>
-          </Header>
-          {this.renderListItem(Matches)}
-        </Table>
-      </Container>
-    );
-  }
-}
+export default () => (
+  <Container>
+    <TitleBorder>
+      <Title>История матчей</Title>
+    </TitleBorder>
+    <Table>
+      <Header>
+        <LeftColumn>Дата</LeftColumn>
+        <CenterColumn>Матч</CenterColumn>
+        <RightColumn>Турнир</RightColumn>
+      </Header>
+      {renderListItem(Matches)}
+    </Table>
+  </Container>
+);

@@ -1,7 +1,8 @@
 /*!
- * dependencies
+ * Dependencies
  */
-import * as React from 'react';
+
+import React from 'react';
 
 /*!
  * Styled Component
@@ -17,42 +18,45 @@ import {
 } from './style';
 
 /*!
+ * Helpers
+ */
+
+const percentsCalc = (int, games) => `${((int / games) * 100).toFixed(2)}%`;
+
+/*!
  * Expo
  */
 
-export default class App extends React.Component<IProgressBarProps, IProgressBarState> {
+export default (props: IProgressBarProps) => {
+  const { totalGame } = props;
 
-  percentsCalc = (int, games) => ((int / games) * 100).toFixed(2) + '%';
+  const wins = percentsCalc(props.wins, totalGame);
+  const draw = percentsCalc(props.draw, totalGame);
+  const lose = percentsCalc(props.lose, totalGame);
 
-  render() {
-    const { totalGame } = this.props;
-    const wins = this.percentsCalc(this.props.wins, totalGame);
-    const draw = this.percentsCalc(this.props.draw, totalGame);
-    const lose = this.percentsCalc(this.props.lose, totalGame);
-    return (
-      <div>
-        <Header size={this.props.size}>
-          <Title>
-            Всего матчей: {totalGame}
-          </Title>
-        </Header>
-        <ProgressBar size={this.props.size}>
-          <Part percents={wins} color={'#5cb85c'} first={true} />
-          <Part percents={draw} color={'#777'} />
-          <Part percents={lose} color={'#d9534f'} last={true} />
-        </ProgressBar>
-        <Footer size={this.props.size}>
-          <Item percents={wins} color={'#5cb85c'} first={true}>
-            {wins}
-          </Item>
-          <Item percents={draw} color={'#777'}>
-            {draw}
-          </Item>
-          <Item percents={lose} color={'#d9534f'} last={true}>
-            {lose}
-          </Item>
-        </Footer>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Header size={props.size}>
+        <Title>
+          Всего матчей: {totalGame}
+        </Title>
+      </Header>
+      <ProgressBar size={props.size}>
+        <Part percents={wins} color={'#5cb85c'} first={true} />
+        <Part percents={draw} color={'#777'} />
+        <Part percents={lose} color={'#d9534f'} last={true} />
+      </ProgressBar>
+      <Footer size={props.size}>
+        <Item percents={wins} color={'#5cb85c'} first={true}>
+          {wins}
+        </Item>
+        <Item percents={draw} color={'#777'}>
+          {draw}
+        </Item>
+        <Item percents={lose} color={'#d9534f'} last={true}>
+          {lose}
+        </Item>
+      </Footer>
+    </div>
+  );
+};
