@@ -1,5 +1,13 @@
+/*!
+ * Dependencies
+ */
+
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+
+/*!
+ * Expo
+ */
 
 export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
@@ -14,12 +22,13 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
+          <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </html>
-    )
+    );
   }
 }

@@ -21,6 +21,7 @@ import {
   Main,
   Footer,
   NavBar,
+
   Container,
 } from '../styledComponents/MainScreen';
 
@@ -31,7 +32,7 @@ import { MenuList } from '../styledComponents/styledMenuList';
  * Theme
  */
 
-import basic from './../theme/basic';
+import basic from 'theme/basic';
 
 /*!
  * Initial state
@@ -50,20 +51,6 @@ const array = [
   'Саратов',
   'Волгоград',
   'Казань',
-];
-
-const category = [
-  'Команды',
-  'Турниры',
-  'Матчи',
-  'Турнирная сетка',
-  'Прямой эфир',
-  'Команды',
-  'Турниры',
-  'Матчи',
-  'Матчи',
-  'Матчи',
-  'Матчи',
 ];
 
 /*
@@ -85,7 +72,7 @@ class Home extends React.Component {
         <div style={{ backgroundColor: '#f0eeeb' }}>
           <Container>
             <NavBar>
-              <Search placeholder={'Введите текст'} handleShowList={this.handleShowList} />
+              {/* <Search placeholder={'Введите текст'} handleShowList={this.handleShowList} /> */}
             </NavBar>
             <Main>
               {search}
