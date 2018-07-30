@@ -9,25 +9,24 @@ import { ThemeProvider } from 'styled-components';
  * Components
  */
 
-import List from 'components/List';
-import Card from 'components/Card';
-// import Search from '../components/input';
-import Button from 'components/Button';
+import List from '../components/List';
+import Search from '../components/Search';
 
 /*
  * Styled Components
  */
 
 import {
-  Container,
+  Body,
+  Main,
   Footer,
   NavBar,
-  Main,
-  Body,
-  Commercial,
-} from 'styledComponents/styledMainScreen';
 
-import { MenuList } from 'styledComponents/styledMenuList';
+  Container,
+} from '../styledComponents/MainScreen';
+
+import PlayerCard from '../components/PlayerCard';
+import { MenuList } from '../styledComponents/styledMenuList';
 
 /*!
  * Theme
@@ -76,16 +75,12 @@ class Home extends React.Component {
               {/* <Search placeholder={'Введите текст'} handleShowList={this.handleShowList} /> */}
             </NavBar>
             <Main>
-              <Button>Test</Button>
               {search}
-              {category.map(el => <MenuList key={el}>{el}</MenuList>)}
+              {category.map((el, index) => <MenuList key={index.toString()}>{el}</MenuList>)}
             </Main>
             <Body>
-              <div className="card_list">
-                <Card />
-              </div>
+              <PlayerCard />
             </Body>
-            <Commercial />
             <Footer />
           </Container>
         </div>
