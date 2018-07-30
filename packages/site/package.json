@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@zeit/next-typescript": "^1.1.0",
+    "babel-plugin-styled-components": "^1.5.1",
     "typescript": "^2.9.2"
   }
 }
