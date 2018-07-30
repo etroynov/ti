@@ -18,7 +18,7 @@ export const List = styled.ul`
   list-style-type: none;
 `;
 
-export const ListItem = styled.li`
+export const Item = styled.li`
   padding-left: 10px;
   padding-right: 10px;
   &:hover {

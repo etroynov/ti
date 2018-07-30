@@ -1,8 +1,8 @@
 /*!
- * dependencies
+ * Dependencies
  */
 
-import * as React from 'react';
+import React from 'react';
 
 /*!
  * ManualData
@@ -26,43 +26,36 @@ import {
 } from './style';
 
 /*!
- * COmponents
+ * Components
  */
 
 import TeamContent from '../TeamsContent';
+
+/**
+ * Render List Item
+ */
+
+const renderListItem = teams => teams.map(item => <TeamContent {...item} />);
 
 /*!
 * Expo
 */
 
-export default class App extends React.Component {
-
-  renderListItem = (teams) => {
-    return teams.map(item =>
-      (
-        <TeamContent {...item} />
-      ),
-    );
-  }
-
-  render() {
-    return (
-      <Container>
-        <TitleBorder>
-          <Title>Участие в командах</Title>
-        </TitleBorder>
-        <Table>
-          <Header>
-            <LeftColumn>Команда</LeftColumn>
-            <RightColumn>
-              <Sub >Победы</Sub>
-              <Sub>Ничья</Sub>
-              <Sub>Поражение</Sub>
-            </RightColumn>
-          </Header>
-          {this.renderListItem(Teams)}
-        </Table>
-      </Container>
-    );
-  }
-}
+export default () => (
+  <Container>
+    <TitleBorder>
+      <Title>Участие в командах</Title>
+    </TitleBorder>
+    <Table>
+      <Header>
+        <LeftColumn>Команда</LeftColumn>
+        <RightColumn>
+          <Sub >Победы</Sub>
+          <Sub>Ничья</Sub>
+          <Sub>Поражение</Sub>
+        </RightColumn>
+      </Header>
+      {renderListItem(Teams)}
+    </Table>
+  </Container>
+);

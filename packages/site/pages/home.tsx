@@ -2,7 +2,7 @@
  * Dependencies
  */
 
-import * as React from 'react';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 /*!
@@ -32,7 +32,7 @@ import { MenuList } from '../styledComponents/styledMenuList';
  * Theme
  */
 
-import basic from 'theme/basic';
+import theme from '../theme/default';
 
 /*!
  * Initial state
@@ -68,11 +68,11 @@ class Home extends React.Component {
       : null;
 
     return (
-      <ThemeProvider theme={basic}>
+      <ThemeProvider theme={theme}>
         <div style={{ backgroundColor: '#f0eeeb' }}>
           <Container>
             <NavBar>
-              {/* <Search placeholder={'Введите текст'} handleShowList={this.handleShowList} /> */}
+              <Search placeholder={'Введите текст'} handleShowList={this.handleShowList} />
             </NavBar>
             <Main>
               {search}
