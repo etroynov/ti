@@ -1,0 +1,25 @@
+FORMAT: 1A
+
+# The international API
+
+# Group Команды
+
+## Команды [/teams]
+
+### List All Questions [GET]
++ Response 200 (application/json)
+
+    + Attributes (array[Question])
+
+## Data Structures
+
+### Question
++ question: Favourite programming language? (required)
++ published_at: `2014-11-11T08:40:51.620Z` (required)
++ url: /questions/1 (required)
++ choices (array[Choice], required)
+
+### Choice
++ choice: Javascript (required)
++ url: /questions/1/choices/1 (required)
++ votes: 2048 (number, required)
