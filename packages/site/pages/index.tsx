@@ -15,7 +15,7 @@ import { Layout, Header, Footer } from '../components/Common';
  * Theme
  */
 
-import theme from '../theme/basic';
+import theme from '../theme/default';
 
 /*
  * Expo
