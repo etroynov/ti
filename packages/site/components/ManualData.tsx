@@ -94,3 +94,104 @@ export const Player = {
   'На The Shanghai Major 2016 его и вовсе ждал триумф - первое место. Однако,\n' +
   '  сразу после турнира w33 был уволен из команды и за оставшиеся дни окна решафлов нашел себе пристанище в Digital Chaos./n',
 };
+export const TeamList = [
+  {
+    teamName: 'Liquid',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/NZXj8TRzxesLuL1ohBWzia0fqV0=/0x0:250x250/150x150/filters:quality(95)/https://s3.eu-central-1' +
+    '.amazonaws.com/esports-core-media/de/de44dce89fc40d2e9c38057e381d4757.png?m=43027a53a5644ccce50690704946d401',
+    totalAmount: '1 554 878$' ,
+    totalGame: 20,
+    wins: 11,
+    game: 'dota2',
+    draw: 3,
+    lose: 6,
+  },
+  {
+    teamName: 'Team Secret',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/UwRGca_TD07j-eyc0XoNiW-EBDw=/0x0:511x500/150x150/filters:quality(95)/https://s3.eu-central-1' +
+    '.amazonaws.com/esports-core-media/b8/b8c1b7f7e652f989f861a1ea964b8e8a.png?m=84f587279a108decc0783023bd8a67c4',
+    totalGame: 15,
+    totalAmount: '1 554 878$' ,
+    game: 'dota2',
+    wins: 6,
+    draw: 1,
+    lose: 8,
+  },
+  {
+    teamName: 'Thunderbirds',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/KnxkgQWfMWEyDbfZy7SI_KtinXo=/0x0:150x150/150x150/filters:quality(95)/https://s3.eu-central-1.' +
+    'amazonaws.com/esports-core-media/ad/ad703fc4d5db1d93ee6e586ce81d96a6.png?m=188c0ba8d1b752f09a4ad0d2b11eaba6',
+    totalGame: 39,
+    totalAmount: '1 554 878$' ,
+    game: 'dota2',
+    wins: 15,
+    draw: 20,
+    lose: 4,
+  },
+  {
+    teamName: 'Liquid',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/NZXj8TRzxesLuL1ohBWzia0fqV0=/0x0:250x250/150x150/filters:quality(95)/https://s3.eu-central-1' +
+    '.amazonaws.com/esports-core-media/de/de44dce89fc40d2e9c38057e381d4757.png?m=43027a53a5644ccce50690704946d401',
+    totalAmount: '1 554 878$' ,
+    totalGame: 20,
+    wins: 11,
+    game: 'dota2',
+    draw: 3,
+    lose: 6,
+  },
+  {
+    teamName: 'Team Secret',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/UwRGca_TD07j-eyc0XoNiW-EBDw=/0x0:511x500/150x150/filters:quality(95)/https://s3.eu-central-1' +
+    '.amazonaws.com/esports-core-media/b8/b8c1b7f7e652f989f861a1ea964b8e8a.png?m=84f587279a108decc0783023bd8a67c4',
+    totalGame: 15,
+    totalAmount: '1 554 878$' ,
+    game: 'dota2',
+    wins: 6,
+    draw: 1,
+    lose: 8,
+  },
+  {
+    teamName: 'Thunderbirds',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/KnxkgQWfMWEyDbfZy7SI_KtinXo=/0x0:150x150/150x150/filters:quality(95)/https://s3.eu-central-1.' +
+    'amazonaws.com/esports-core-media/ad/ad703fc4d5db1d93ee6e586ce81d96a6.png?m=188c0ba8d1b752f09a4ad0d2b11eaba6',
+    totalGame: 39,
+    totalAmount: '1 554 878$' ,
+    game: 'dota2',
+    wins: 15,
+    draw: 20,
+    lose: 4,
+  },
+  {
+    teamName: 'Liquid',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/NZXj8TRzxesLuL1ohBWzia0fqV0=/0x0:250x250/150x150/filters:quality(95)/https://s3.eu-central-1' +
+    '.amazonaws.com/esports-core-media/de/de44dce89fc40d2e9c38057e381d4757.png?m=43027a53a5644ccce50690704946d401',
+    totalAmount: '1 554 878$' ,
+    totalGame: 20,
+    wins: 11,
+    game: 'dota2',
+    draw: 3,
+    lose: 6,
+  },
+  {
+    teamName: 'Team Secret',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/UwRGca_TD07j-eyc0XoNiW-EBDw=/0x0:511x500/150x150/filters:quality(95)/https://s3.eu-central-1' +
+    '.amazonaws.com/esports-core-media/b8/b8c1b7f7e652f989f861a1ea964b8e8a.png?m=84f587279a108decc0783023bd8a67c4',
+    totalGame: 15,
+    totalAmount: '1 554 878$' ,
+    game: 'dota2',
+    wins: 6,
+    draw: 1,
+    lose: 8,
+  },
+  {
+    teamName: 'Thunderbirds',
+    teamAvatar: 'https://svirtus.cdnvideo.ru/KnxkgQWfMWEyDbfZy7SI_KtinXo=/0x0:150x150/150x150/filters:quality(95)/https://s3.eu-central-1.' +
+    'amazonaws.com/esports-core-media/ad/ad703fc4d5db1d93ee6e586ce81d96a6.png?m=188c0ba8d1b752f09a4ad0d2b11eaba6',
+    totalGame: 39,
+    totalAmount: '1 554 878$' ,
+    game: 'dota2',
+    wins: 15,
+    draw: 20,
+    lose: 4,
+  },
+];
