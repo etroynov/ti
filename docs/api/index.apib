@@ -7,19 +7,61 @@ FORMAT: 1A
 ### List of all players [GET]
 
 + Response 200 (application/json)
-  {
-      "id": 1,
-      "name": "Dendi",
-      "biography": "",
-      "wins": 370,
-      "lost": 286,
-      "draw": 44,
-      "prize_money": 137179,
-      "current_team": 5,
-      "played_in_teams": [
+    [
         {
-          "id": 1,
-          "name": "navi"
+            "id": 1,
+            "name": "Dendi",
+            "biography": "",
+            "wins": 370,
+            "lost": 286,
+            "draw": 44,
+            "prize_money": 137179,
+            "current_team": 1,
+            "played_in_teams": [
+                {
+                    "id": 1,
+                    "date_from": "Thu Aug 02 2018 18:54:35 GMT+0300",
+                    "date_to": "Thu Aug 02 2018 18:54:35 GMT+0300",
+                }
+            ]
+        }, {
+            "id": 1,
+            "name": "Dendi",
+            "biography": "",
+            "wins": 370,
+            "lost": 286,
+            "draw": 44,
+            "prize_money": 137179,
+            "current_team": 1,
+            "played_in_teams": [
+                {
+                    "id": 1,
+                    "date_from": "Thu Aug 02 2018 18:54:35 GMT+0300",
+                    "date_to": "Thu Aug 02 2018 18:54:35 GMT+0300",
+                }
+            ]
         }
-      ]
-  }
+    ]
+
+### Player [GET /players/{user_id}]
+
++ Parameters
+  + user_id: (number, required)
+
++ Response 200 (application/json)
+
+
+### Add player [POST]
+
++ Response 200 (application/json)
+  {}
+
+### Update player [PATCH]
+
++ Response 200 (application/json)
+  {}
+
+### Delete player [DELETE]
+
++ Response 200 (application/json)
+  {}
