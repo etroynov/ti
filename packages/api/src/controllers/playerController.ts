@@ -17,13 +17,13 @@ const Page = mongoose.model('Page');
  * Expo
  */
 
-export const index = async (req, res) => {
+const index = async (req, res) => {
   const pages = await Page.find();
 
   return send(res, 200, pages);
 };
 
-export const show = async (req, res) => {
+const show = async (req, res) => {
   try {
     const page = await Page.findOne({ slug: req.params.slug });
 
@@ -33,14 +33,14 @@ export const show = async (req, res) => {
   }
 }
 
-export const create = async (req, res) => {
+const store = async (req, res) => {
   const data = await json(req);
   const page = await Page.create(data);
 
   return send(res, 200, page);
 };
 
-export const update = async (req, res) => {
+const update = async (req, res) => {
   const data = await json(req);
   const { _id } = data;
 
@@ -49,7 +49,7 @@ export const update = async (req, res) => {
   return send(res, 200, page);
 };
 
-export const delete = async (req, res) => {
+const destroy = async (req, res) => {
   const data = await json(req);
   const { _id } = data;
 
@@ -57,3 +57,5 @@ export const delete = async (req, res) => {
 
   return send(res, 200);
 };
+
+export default { index, show, store, update, destroy };

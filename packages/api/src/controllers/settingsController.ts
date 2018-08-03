@@ -16,20 +16,20 @@ const Settings = mongoose.model('Settings');
  * Expos
  */
 
-exports.index = async (req, res) => {
+const index = async (req, res) => {
   const settings = await Settings.find();
 
   return send(res, 200, settings);
 };
 
-exports.create = async (req, res) => {
+const store = async (req, res) => {
   const data = await json(req);
   const settings = await Settings.create(data);
 
   return send(res, 200, settings);
 };
 
-exports.update = async (req, res) => {
+const update = async (req, res) => {
   const data = await json(req);
   const { _id } = data;
 
@@ -38,7 +38,7 @@ exports.update = async (req, res) => {
   return send(res, 200, settings);
 };
 
-exports.delete = async (req, res) => {
+const destroy = async (req, res) => {
   const data = await json(req);
   const { _id } = data;
 
@@ -46,3 +46,5 @@ exports.delete = async (req, res) => {
 
   return send(res, 200);
 };
+
+export default { index, store, update, destroy };

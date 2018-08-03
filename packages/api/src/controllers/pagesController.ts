@@ -13,34 +13,33 @@ const mongoose = require('mongoose');
 const Page = mongoose.model('Page');
 
 /*!
- * Expos
+ * Expo
  */
 
-exports.index = async (req, res) => {
+const index = async (req, res) => {
   const pages = await Page.find();
 
   return send(res, 200, pages);
 };
 
-exports.show = async (req, res) => {
+const show = async (req, res) => {
   try {
-    console.info(req.params);
     const page = await Page.findOne({ slug: req.params.slug });
-    
+
     return send(res, 200, page);
-  } catch(e) {
+  } catch (e) {
     return send(res, 500, e);
   }
 }
 
-exports.create = async (req, res) => {
+const store = async (req, res) => {
   const data = await json(req);
   const page = await Page.create(data);
 
   return send(res, 200, page);
 };
 
-exports.update = async (req, res) => {
+const update = async (req, res) => {
   const data = await json(req);
   const { _id } = data;
 
@@ -49,7 +48,7 @@ exports.update = async (req, res) => {
   return send(res, 200, page);
 };
 
-exports.delete = async (req, res) => {
+const destroy = async (req, res) => {
   const data = await json(req);
   const { _id } = data;
 
@@ -57,3 +56,5 @@ exports.delete = async (req, res) => {
 
   return send(res, 200);
 };
+
+export default { index, show, store, update, destroy };

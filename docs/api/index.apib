@@ -19,7 +19,7 @@ FORMAT: 1A
             "current_team": 1,
             "played_in_teams": [
                 {
-                    "id": 1,
+                    "team_id": 1,
                     "date_from": "Thu Aug 02 2018 18:54:35 GMT+0300",
                     "date_to": "Thu Aug 02 2018 18:54:35 GMT+0300",
                 }
@@ -35,7 +35,7 @@ FORMAT: 1A
             "current_team": 1,
             "played_in_teams": [
                 {
-                    "id": 1,
+                    "team_id": 1,
                     "date_from": "Thu Aug 02 2018 18:54:35 GMT+0300",
                     "date_to": "Thu Aug 02 2018 18:54:35 GMT+0300",
                 }
@@ -43,7 +43,7 @@ FORMAT: 1A
         }
     ]
 
-### Player [GET /players/{user_id}]
+### Single player [GET /players/{user_id}]
 
 + Parameters
   + user_id: (number, required)
@@ -54,7 +54,10 @@ FORMAT: 1A
 ### Add player [POST]
 
 + Response 200 (application/json)
-  {}
+  {
+    "id": 1,
+    "
+  }
 
 ### Update player [PATCH]
 
@@ -63,5 +66,4 @@ FORMAT: 1A
 
 ### Delete player [DELETE]
 
-+ Response 200 (application/json)
-  {}
++ Response 204 (application/json)

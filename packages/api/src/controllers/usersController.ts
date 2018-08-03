@@ -7,13 +7,14 @@
  *
  * Module dependencies
  */
-const mongoose = require('mongoose');
 
-const { send, json } = require('micro');
-const { hashSync, compareSync } = require('bcryptjs');
-const { generate } = require('generate-password');
-const { createTransport } = require('nodemailer');
-const { sign } = require('jsonwebtoken');
+import mongoose from 'mongoose';
+
+import { send, json } from 'micro';
+import { hashSync, compareSync } from 'bcryptjs';
+import { generate } from 'generate-password';
+import { createTransport } from 'nodemailer';
+import { sign } from 'jsonwebtoken';
 
 const User = mongoose.model('User');
 
@@ -43,22 +44,22 @@ const sendPasswordToEmail = async ({ fio, email }, password) => {
     };
 
     return transporter.sendMail(mailOptions);
-  } catch(e) {
+  } catch (e) {
     return send(res, 500, e);
   }
-}
+};
 
 /*!
  * Expos
  */
 
-exports.index = async (req, res) => {
+const index = async (req, res) => {
   const users = await User.find();
 
   return send(res, 200, users);
 };
 
-exports.create = async (req, res) => {
+const store = async (req, res) => {
   try {
     const user = await json(req);
     const hashPassword = generate({length: 10, numbers: true });
@@ -74,53 +75,44 @@ exports.create = async (req, res) => {
   }
 };
 
-exports.update = async (req, res) => {
+const update = async (req, res) => {
   try {
     const data = await json(req);
     const { _id } = data;
 
     const user = await User.findOneAndUpdate({ _id }, data, { new: true });
     return send(res, 200, user);
-  } catch(e) {
+  } catch (e) {
     return send(res, 500, e);
   }
 };
 
-exports.login = async (req, res) => {
+const login = async (req, res) => {
   try {
     const { email, password } = await json(req);
     const user = await User.findOne({ email }, { _id: 1, fio: 1, position: 1, email: 1, password: 1 });
 
     if (compareSync(password, user.password)) {
       const token = sign(user.toObject(), '123');
-      return send(res, 200, { token })
+      return send(res, 200, { token });
     }
 
     return send(res, 403);
-  } catch(e) {
-    return send(res, 500, e)
+  } catch (e) {
+    return send(res, 500, e);
   }
-}
+};
 
-exports.info = async (req, res) => {
-  try {
-    const _id = req.params.id;
-    const user = await User.findOne({ _id }).populate('organization').populate('courses').populate('finishedCourses');
-
-    return send(res, 200, user);
-  } catch(e) {
-    return send(res, 500, e)
-  }
-}
-
-exports.delete = async (req, res) => {
+const destroy = async (req, res) => {
   try {
     const { id } = await json(req);
 
     await User.findByIdAndRemove(id);
-    
+
     return send(res, 200);
-  } catch(e) {
+  } catch (e) {
     return send(res, 500, e);
   }
 };
+
+export default { index, show, store, update, destroy };
