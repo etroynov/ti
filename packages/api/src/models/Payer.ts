@@ -1,27 +1,20 @@
 /**
- * Lesson model
+ * Player model
  *
  * @module       :: model
- * @description  :: Represent Lesson in database
+ * @description  :: Represent Player in database
  *
  *
  * Module dependencies
  */
 
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+import { Schema } from 'mongoose';
 
 /**
- * Lesson schema
+ * Schema annotation
  */
 
-const LessonSchema = new Schema({
+export default new Schema({
   name: String,
   content: String,
 });
-
-/**
- * Register
- */
-
-mongoose.model('Lesson', LessonSchema);

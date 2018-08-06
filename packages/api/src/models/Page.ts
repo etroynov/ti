@@ -8,17 +8,19 @@
  * Module dependencies
  */
 
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import { Schema } from 'mongoose';
 
 /**
- * Expo
+ * Schema annotation
  */
 
 export default new Schema({
   title: String,
+
   description: String,
+
   name: String,
+
   content: String,
 
   slug: {

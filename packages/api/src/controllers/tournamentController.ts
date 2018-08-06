@@ -1,19 +1,19 @@
 /**
- * Player controller
+ * Tournament controller
  *
  * @module       :: controller
- * @description  :: keep logic for handle players ( create, update and etc )
+ * @description  :: keep logic for handle tournaments ( create, update and etc )
  *
  *
  * Module dependencies
  */
 
-import { send, json } from 'micro';
-import mongoose from 'mongoose';
-
-import { IRequest, IResponse, IRequestJson } from '../../interfaces';
+const { send, json } = require('micro');
+const mongoose = require('mongoose');
 
 const Page = mongoose.model('Page');
+
+import { IRequest, IResponse } from '../../interfaces';
 
 /*!
  * Expo
@@ -43,7 +43,7 @@ const store = async (req: IRequest, res: IResponse) => {
 };
 
 const update = async (req: IRequest, res: IResponse) => {
-  const data = await json(req) as IRequestJson;
+  const data = await json(req);
   const { _id } = data;
 
   const page = await Page.findOneAndUpdate({ _id }, data, { new: true });
@@ -52,7 +52,7 @@ const update = async (req: IRequest, res: IResponse) => {
 };
 
 const destroy = async (req: IRequest, res: IResponse) => {
-  const data = await json(req) as IRequestJson;
+  const data = await json(req);
   const { _id } = data;
 
   await Page.remove(_id);

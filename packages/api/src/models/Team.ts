@@ -1,52 +1,58 @@
 /**
- * Course model
+ * Team model
  *
  * @module       :: model
- * @description  :: Represent Course in database
+ * @description  :: Represent team in database
  *
  *
  * Module dependencies
  */
 
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+import { Schema } from 'mongoose';
 
 /**
- * Course schema
+ * Schema annotation
  */
 
-const CourseSchema = new Schema({
+export default new Schema({
   title: String,
+
   description: String,
+
   name: String,
+
   content: String,
+
   thumb: String,
+
   icon: String,
+
   price: {
     type: Number,
     default: 0,
   },
+
   duration: {
     type: Number,
     default: 0,
   },
+
   tags: Array,
+
   sections: [{ type: Schema.Types.ObjectId, ref: 'Section' }],
+
   lessons: [{ type: Schema.Types.ObjectId, ref: 'Lesson' }],
+
   questions: [{ type: Schema.Types.ObjectId, ref: 'Question' }],
+
   slug: {
     type: String,
     unique: true,
     required: true,
   },
+
   status: {
     type: Number,
     default: 0,
-  }
+  },
 });
-
-/**
- * Register
- */
-
-mongoose.model('Course', CourseSchema);

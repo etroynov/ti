@@ -9,6 +9,8 @@ import mongoose from 'mongoose';
 import { send } from 'micro';
 import { router, get, post, patch, del } from 'microrouter';
 
+import { IRequest, IResponse } from '../interfaces';
+
 /*!
  * DB
  */
@@ -24,7 +26,7 @@ import playerController from './controllers/playerController';
 import teamController from './controllers/teamController';
 import tournamentController from './controllers/tournamentController';
 
-const notfound = (req, res) => send(res, 404, 'You shall not passs :)');
+const notfound = (_: IRequest, res: IResponse) => send(res, 404, 'You shall not passs :)');
 
 /**
  * Expo
@@ -36,23 +38,23 @@ export default compose(
   /** PAGES **/
   get('/players',       playerController.index),
   get('/players/:slug', playerController.show),
-  post('/players',      playerController.create),
+  post('/players',      playerController.store),
   patch('/players',     playerController.update),
-  del('/players',       playerController.delete),
+  del('/players',       playerController.destroy),
 
   /** COURSES **/
   get('/teams',          teamController.index),
   get('/teams/:id',      teamController.show),
-  post('/teams/create',  teamController.create),
+  post('/teams/store',  teamController.store),
   patch('/teams/update', teamController.update),
-  del('/teams/delete',   teamController.delete),
+  del('/teams/destroy',   teamController.destroy),
 
-  /** LESSONS **/
+  /** TOURNAMENTS **/
   get('/tournaments',          tournamentController.index),
   get('/tournaments/:id',      tournamentController.show),
-  post('/tournaments/create',  tournamentController.create),
-  post('/tournaments/update',  tournamentController.update),
-  post('/tournaments/delete',  tournamentController.delete),
+  post('/tournaments/store',  tournamentController.store),
+  patch('/tournaments/update',  tournamentController.update),
+  del('/tournaments/destroy',  tournamentController.destroy),
 
   /** 404 **/
   get('/*', notfound),

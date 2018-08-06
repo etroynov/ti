@@ -1,61 +1,66 @@
 /**
- * Lessons controller
+ * Team controller
  *
  * @module       :: controller
- * @description  :: keep logic for handle lessons ( create, update and etc )
+ * @description  :: keep logic for handle team ( create, update and etc )
  *
  *
  * Module dependencies
  */
 
+import { model } from 'mongoose';
 import { send, json } from 'micro';
-import mongoose from 'mongoose';
 
-const Lesson = mongoose.model('Lesson');
-const Course = mongoose.model('Course');
+import { IRequest, IResponse, IRequestJson } from '../../interfaces';
 
-/*!
- * Expos
+/**
+ * Schema
  */
 
-const index = async (req, res) => {
-  const lessons = await Lesson.find();
+import TeamSchema from '../models/Team';
 
-  return send(res, 200, lessons);
+const Team = model('Team', TeamSchema);
+
+/*!
+ * Expo
+ */
+
+const index = async (_:IRequest, res: IResponse) => {
+  const teams = await Team.find();
+
+  return send(res, 200, teams);
 };
 
-const show = async (req, res) => {
+const show = async (req: IRequest, res: IResponse) => {
   try {
-    const lesson = await Lesson.findOne({ _id: req.params.id });
+    const team = await Team.findOne({ slug: req.params.slug });
 
-    return send(res, 200, lesson);
+    return send(res, 200, team);
   } catch (e) {
     return send(res, 500, e);
   }
-}
-
-const store = async (req, res) => {
-  const data = await json(req);
-  const lesson = await Lesson.create(data);
-
-  course.lessons.push(lesson._id);
-  await course.save();
-
-  return send(res, 200, lesson);
 };
 
-const update = async (req, res) => {
+const store = async (req: IRequest, res: IResponse) => {
   const data = await json(req);
+  const team = await Team.create(data);
+
+  return send(res, 200, team);
+};
+
+const update = async (req: IRequest, res: IResponse) => {
+  const data = await json(req) as IRequestJson;
   const { _id } = data;
 
-  const lesson = await Lesson.findOneAndUpdate({ _id }, data, { new: true });
+  const team = await Team.findOneAndUpdate({ _id }, data, { new: true });
 
-  return send(res, 200, lesson);
+  return send(res, 200, team);
 };
 
-const destroy = async (req, res) => {
-  const data = await json(req);
-  const lesson = await Lesson.remove(data);
+const destroy = async (req: IRequest, res: IResponse) => {
+  const data = await json(req) as IRequestJson;
+
+  await Team.remove(data);
 
   return send(res, 200);
 };
