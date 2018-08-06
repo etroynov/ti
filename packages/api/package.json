@@ -1,10 +1,10 @@
 {
-  "name": "ucavtor-api",
+  "name": "ti-api",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "start": "node dist",
-    "start-dev-api": "micro-dev -p 8081 dist/app"
+    "start-dev-api": "micro-dev -p 8081 dist/app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

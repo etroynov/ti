@@ -15,16 +15,22 @@ import { IRequest, IResponse } from '../interfaces';
  * DB
  */
 
-mongoose.connect('mongodb://localhost/ti');
+mongoose.connect('mongodb://localhost:27017/ti', { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
+
+/*!
+ * Api Prefix
+ */
+
+const apiPrefix = 'v1';
 
 /*!
  * Routes
  */
 
-import playerController from './controllers/playerController';
-import teamController from './controllers/teamController';
-import tournamentController from './controllers/tournamentController';
+import * as playerController from './controllers/playerController';
+// import teamController from './controllers/teamController';
+// import tournamentController from './controllers/tournamentController';
 
 const notfound = (_: IRequest, res: IResponse) => send(res, 404, 'You shall not passs :)');
 
@@ -32,30 +38,28 @@ const notfound = (_: IRequest, res: IResponse) => send(res, 404, 'You shall not 
  * Expo
  */
 
-export default compose(
-  cors,
-)(router(
+export default router(
   /** PAGES **/
-  get('/players',       playerController.index),
-  get('/players/:slug', playerController.show),
-  post('/players',      playerController.store),
-  patch('/players',     playerController.update),
-  del('/players',       playerController.destroy),
+  get(`/${apiPrefix}/players`,       playerController.index),
+  get(`/${apiPrefix}/players/:slug`, playerController.show),
+  // post(`/${apiPrefix}/players`,      playerController.store),
+  // patch(`/${apiPrefix}/players`,     playerController.update),
+  // del(`/${apiPrefix}/players`,       playerController.destroy),
 
-  /** COURSES **/
-  get('/teams',          teamController.index),
-  get('/teams/:id',      teamController.show),
-  post('/teams/store',  teamController.store),
-  patch('/teams/update', teamController.update),
-  del('/teams/destroy',   teamController.destroy),
+  // /** COURSES **/
+  // get('/teams',          teamController.index),
+  // get('/teams/:id',      teamController.show),
+  // post('/teams/store',  teamController.store),
+  // patch('/teams/update', teamController.update),
+  // del('/teams/destroy',   teamController.destroy),
 
-  /** TOURNAMENTS **/
-  get('/tournaments',          tournamentController.index),
-  get('/tournaments/:id',      tournamentController.show),
-  post('/tournaments/store',  tournamentController.store),
-  patch('/tournaments/update',  tournamentController.update),
-  del('/tournaments/destroy',  tournamentController.destroy),
+  // /** TOURNAMENTS **/
+  // get('/tournaments',          tournamentController.index),
+  // get('/tournaments/:id',      tournamentController.show),
+  // post('/tournaments/store',  tournamentController.store),
+  // patch('/tournaments/update',  tournamentController.update),
+  // del('/tournaments/destroy',  tournamentController.destroy),
 
   /** 404 **/
   get('/*', notfound),
-));
+);
