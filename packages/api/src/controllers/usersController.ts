@@ -18,12 +18,12 @@ import { send, json } from 'micro';
 import { IRequest, IResponse, IRequestJson } from '../../interfaces';
 
 /**
- * Schema
+ * Model
  */
 
-import UserSchema from '../models/User';
+import UserModel from '../models/User';
 
-const User = model('User', UserSchema);
+const User = model('User', UserModel);
 
 // const sendPasswordToEmail = async ({ fio, email }, password) => {
 //   try {

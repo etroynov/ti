@@ -13,13 +13,13 @@ import { model } from 'mongoose';
 
 import { IRequest, IResponse, IRequestJson } from '../../interfaces';
 
-import PlayerSchema from '../models/Payer';
+import PlayerModel from '../models/Payer';
 
 /*!
  * Register model
  */
 
-const Player = model('Player', PlayerSchema);
+const Player = model('Player', PlayerModel);
 
 /*!
  * Expo

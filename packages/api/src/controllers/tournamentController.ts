@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 
 const Page = mongoose.model('Page');
 
-import { IRequest, IResponse } from '../../interfaces';
+import { IRequest, IResponse, IRequestJson } from '../../interfaces';
 
 /*!
  * Expo
@@ -43,7 +43,7 @@ const store = async (req: IRequest, res: IResponse) => {
 };
 
 const update = async (req: IRequest, res: IResponse) => {
-  const data = await json(req);
+  const data = await json(req) as IRequestJson;
   const { _id } = data;
 
   const page = await Page.findOneAndUpdate({ _id }, data, { new: true });
@@ -52,7 +52,7 @@ const update = async (req: IRequest, res: IResponse) => {
 };
 
 const destroy = async (req: IRequest, res: IResponse) => {
-  const data = await json(req);
+  const data = await json(req) as IRequestJson;
   const { _id } = data;
 
   await Page.remove(_id);
