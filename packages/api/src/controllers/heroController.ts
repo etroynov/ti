@@ -1,8 +1,8 @@
 /**
- * Team controller
+ * Hero controller
  *
  * @module       :: controller
- * @description  :: keep logic for handle team ( create, update and etc )
+ * @description  :: keep logic for handle hero ( create, update and etc )
  *
  *
  * Module dependencies
@@ -17,25 +17,26 @@ import { IRequest, IResponse, IRequestJson } from '../../interfaces';
  * Schema
  */
 
-import TeamSchema from '../models/Team';
+import HeroSchema from '../models/Hero';
 
-const Team = model('Team', TeamSchema);
+const Hero = model('Hero', HeroSchema);
 
 /*!
  * Expo
  */
 
 export const index = async (_:IRequest, res: IResponse) => {
-  const teams = await Team.find();
+  const heroes = await Hero.find();
 
-  return send(res, 200, teams);
+  return send(res, 200, heroes);
 };
 
 export const show = async (req: IRequest, res: IResponse) => {
   try {
-    const team = await Team.findOne({ slug: req.params.slug });
+    const { slug } = req.params;
+    const hero = await Hero.findOne({ slug });
 
-    return send(res, 200, team);
+    return send(res, 200, hero);
   } catch (e) {
     return send(res, 500, e);
   }
@@ -43,24 +44,24 @@ export const show = async (req: IRequest, res: IResponse) => {
 
 export const store = async (req: IRequest, res: IResponse) => {
   const data = await json(req);
-  const team = await Team.create(data);
+  const hero = await Hero.create(data);
 
-  return send(res, 200, team);
+  return send(res, 200, hero);
 };
 
 export const update = async (req: IRequest, res: IResponse) => {
   const data = await json(req) as IRequestJson;
   const { _id } = data;
 
-  const team = await Team.findOneAndUpdate({ _id }, data, { new: true });
+  const hero = await Hero.findOneAndUpdate({ _id }, data, { new: true });
 
-  return send(res, 200, team);
+  return send(res, 200, hero);
 };
 
 export const destroy = async (req: IRequest, res: IResponse) => {
   const data = await json(req) as IRequestJson;
 
-  await Team.remove(data);
+  await Hero.remove(data);
 
   return send(res, 200);
 };

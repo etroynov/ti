@@ -22,7 +22,7 @@ import theme from '../theme/default';
  * Expo
  */
 
-const Home = ({ teams }) => (
+const Home: IHomeProps = ({ teams = [] }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <Header />
@@ -33,9 +33,13 @@ const Home = ({ teams }) => (
 );
 
 Home.getInitialProps = async () => {
-  const { data } = await axios.get('http://localhost:4000/v1/teams');
+  try {
+    const { data } = await axios.get('http://localhost:4000/v1/teams');
 
-  return { teams: data };
+    return { teams: data };
+  } catch (e) {
+    return {};
+  }
 };
 
 export default Home;

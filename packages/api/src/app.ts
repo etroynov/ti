@@ -29,7 +29,8 @@ const apiPrefix = 'v1';
  */
 
 import * as playerController from './controllers/playerController';
-// import teamController from './controllers/teamController';
+import * as teamController from './controllers/teamController';
+import * as heroController from './controllers/heroController';
 // import tournamentController from './controllers/tournamentController';
 
 const notfound = (_: IRequest, res: IResponse) => send(res, 404, 'You shall not passs :)');
@@ -42,22 +43,29 @@ export default router(
   /** PAGES **/
   get(`/${apiPrefix}/players`,       playerController.index),
   get(`/${apiPrefix}/players/:slug`, playerController.show),
-  // post(`/${apiPrefix}/players`,      playerController.store),
-  // patch(`/${apiPrefix}/players`,     playerController.update),
-  // del(`/${apiPrefix}/players`,       playerController.destroy),
+  // post(`/${apiPrefix}/players`,   playerController.store),
+  // patch(`/${apiPrefix}/players`,  playerController.update),
+  // del(`/${apiPrefix}/players`,    playerController.destroy),
 
   // /** COURSES **/
-  // get('/teams',          teamController.index),
-  // get('/teams/:id',      teamController.show),
-  // post('/teams/store',  teamController.store),
-  // patch('/teams/update', teamController.update),
+  get(`/${apiPrefix}/teams`, teamController.index),
+  // get('/teams/:id',       teamController.show),
+  // post('/teams/store',    teamController.store),
+  // patch('/teams/update',  teamController.update),
   // del('/teams/destroy',   teamController.destroy),
+
+  // /** HERO **/
+  get(`/${apiPrefix}/heroes`,             heroController.index),
+  get(`/${apiPrefix}/heroes/:slug`,       heroController.show),
+  // post('/${apiPrefix}/heroes/store',   heroController.store),
+  // patch('/${apiPrefix}/heroes/update', heroController.update),
+  // del('/${apiPrefix}/heroes/destroy',  heroController.destroy),
 
   // /** TOURNAMENTS **/
   // get('/tournaments',          tournamentController.index),
   // get('/tournaments/:id',      tournamentController.show),
-  // post('/tournaments/store',  tournamentController.store),
-  // patch('/tournaments/update',  tournamentController.update),
+  // post('/tournaments/store',   tournamentController.store),
+  // patch('/tournaments/update', tournamentController.update),
   // del('/tournaments/destroy',  tournamentController.destroy),
 
   /** 404 **/

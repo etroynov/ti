@@ -1,3 +1,32 @@
+/**
+ * Basic
+ */
+
+interface IPageProps {
+  getInitialProps(): object;
+}
+
+/**
+ * Home Page
+ */
+
+interface IHomeProps extends IPageProps {
+  teams: any[] | ITeam[];
+}
+
+/**
+ * Team
+ */
+
+interface ITeam {
+  _id: string;
+  name: string;
+}
+
+/**
+ * Search
+ */
+
 interface ISearchProps {
   placeholder?: string
   handleShowList?: (params: (string | number)) => void
