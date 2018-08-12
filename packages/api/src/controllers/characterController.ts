@@ -1,8 +1,8 @@
 /**
- * Hero controller
+ * Character controller
  *
  * @module       :: controller
- * @description  :: keep logic for handle hero ( create, update and etc )
+ * @description  :: keep logic for handle character ( create, update and etc )
  *
  *
  * Module dependencies
@@ -17,26 +17,26 @@ import { IRequest, IResponse, IRequestJson } from '../../interfaces';
  * Schema
  */
 
-import HeroSchema from '../models/Hero';
+import CharacterSchema from '../models/Character';
 
-const Hero = model('Hero', HeroSchema);
+const Character = model('Character', CharacterSchema);
 
 /*!
  * Expo
  */
 
 export const index = async (_:IRequest, res: IResponse) => {
-  const heroes = await Hero.find();
+  const characters = await Character.find();
 
-  return send(res, 200, heroes);
+  return send(res, 200, characters);
 };
 
 export const show = async (req: IRequest, res: IResponse) => {
   try {
     const { slug } = req.params;
-    const hero = await Hero.findOne({ slug });
+    const character = await Character.findOne({ slug });
 
-    return send(res, 200, hero);
+    return send(res, 200, character);
   } catch (e) {
     return send(res, 500, e);
   }
@@ -44,24 +44,24 @@ export const show = async (req: IRequest, res: IResponse) => {
 
 export const store = async (req: IRequest, res: IResponse) => {
   const data = await json(req);
-  const hero = await Hero.create(data);
+  const character = await Character.create(data);
 
-  return send(res, 200, hero);
+  return send(res, 200, character);
 };
 
 export const update = async (req: IRequest, res: IResponse) => {
   const data = await json(req) as IRequestJson;
   const { _id } = data;
 
-  const hero = await Hero.findOneAndUpdate({ _id }, data, { new: true });
+  const character = await Character.findOneAndUpdate({ _id }, data, { new: true });
 
-  return send(res, 200, hero);
+  return send(res, 200, character);
 };
 
 export const destroy = async (req: IRequest, res: IResponse) => {
   const data = await json(req) as IRequestJson;
 
-  await Hero.remove(data);
+  await Character.remove(data);
 
   return send(res, 200);
 };

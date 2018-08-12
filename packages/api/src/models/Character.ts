@@ -1,8 +1,8 @@
 /**
- * Hero model
+ * Character model
  *
  * @module       :: model
- * @description  :: Represent hero in database
+ * @description  :: Represent game character in database
  *
  *
  * Module dependencies
@@ -18,4 +18,4 @@ export default new Schema({
   name: String,
   thumb: String,
   slug: String,
-}, { collection: 'heroes' });
+});

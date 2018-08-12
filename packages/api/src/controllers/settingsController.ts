@@ -13,13 +13,13 @@ import { model } from 'mongoose';
 
 import { IRequest, IResponse, IRequestJson } from '../../interfaces';
 
-import SettingsModel from '../model/Settings';
+import SettingsSchema from '../models/Settings';
 
 /*!
  * Register model
  */
 
-const Settings = model('Settings', SettingsModel);
+const Settings = model('Settings', SettingsSchema);
 
 /*!
  * Expos

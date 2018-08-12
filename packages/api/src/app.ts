@@ -2,12 +2,10 @@
  * Dependencies
  */
 
-import cors from 'micro-cors';
-import compose from 'micro-compose';
 import mongoose from 'mongoose';
 
 import { send } from 'micro';
-import { router, get, post, patch, del } from 'microrouter';
+import { router, get } from 'microrouter';
 
 import { IRequest, IResponse } from '../interfaces';
 
@@ -30,7 +28,7 @@ const apiPrefix = 'v1';
 
 import * as playerController from './controllers/playerController';
 import * as teamController from './controllers/teamController';
-import * as heroController from './controllers/heroController';
+import * as characterController from './controllers/characterController';
 // import tournamentController from './controllers/tournamentController';
 
 const notfound = (_: IRequest, res: IResponse) => send(res, 404, 'You shall not passs :)');
@@ -55,8 +53,8 @@ export default router(
   // del('/teams/destroy',   teamController.destroy),
 
   // /** HERO **/
-  get(`/${apiPrefix}/heroes`,             heroController.index),
-  get(`/${apiPrefix}/heroes/:slug`,       heroController.show),
+  get(`/${apiPrefix}/characters`,             characterController.index),
+  get(`/${apiPrefix}/characters/:slug`,       characterController.show),
   // post('/${apiPrefix}/heroes/store',   heroController.store),
   // patch('/${apiPrefix}/heroes/update', heroController.update),
   // del('/${apiPrefix}/heroes/destroy',  heroController.destroy),

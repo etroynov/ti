@@ -8,10 +8,10 @@
  * Module dependencies
  */
 
-import { send, json } from 'micro';
+import { send } from 'micro';
 import { model } from 'mongoose';
 
-import { IRequest, IResponse, IRequestJson } from '../../interfaces';
+import { IRequest, IResponse } from '../../interfaces';
 
 import PlayerModel from '../models/Payer';
 

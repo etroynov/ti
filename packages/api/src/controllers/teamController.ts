@@ -26,7 +26,7 @@ const Team = model('Team', TeamSchema);
  */
 
 export const index = async (_:IRequest, res: IResponse) => {
-  const teams = await Team.find();
+  const teams = await Team.find().populate('players', ['nickname', 'country']);
 
   return send(res, 200, teams);
 };

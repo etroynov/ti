@@ -1,8 +1,8 @@
 /**
- * User model
+ * Settings model
  *
  * @module       :: model
- * @description  :: Represent user in database
+ * @description  :: Represent settings in database
  *
  *
  * Module dependencies
@@ -15,20 +15,6 @@ import { Schema } from 'mongoose';
  */
 
 export default new Schema({
-  fio: String,
-
-  telephone: String,
-
-  password: String,
-
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-  },
-
-  level: {
-    type: Number,
-    default: 0,
-  },
+  key: String,
+  value: String,
 });
